@@ -40,25 +40,25 @@ A modern full-stack web application for tracking personal expenses, managing cat
 
 ## 🗂️ Directory Structure
 
-.
-├── app/
-│ ├── api/
-│ │ ├── budgets/ # API endpoints for budgets
-│ │ └── transactions/ # API endpoints for transactions
-│ ├── transactions/
-│ │ └── page.tsx # Transactions listing UI
-│ ├── layout.tsx # Root layout (fonts, themes)
-│ ├── page.tsx # Main dashboard with charts
-│ └── globals.css # Global styles using Tailwind
-├── components/
-│ └── ui/ # Shared UI components (from shadcn)
-├── lib/
-│ └── db.ts # MongoDB connection utility
-├── models/
-│ ├── Budget.ts # Budget Mongoose schema
-│ └── Transaction.ts # Transaction Mongoose schema
-├── public/ # Static assets like favicon
-├── .env # Environment variables (e.g., DB URI)
-├── .gitignore
-├── package.json
-└── README.md
+.<br>
+├── app/<br>
+│ ├── api/<br>
+│ │ ├── budgets/ # API endpoints for budgets<br>
+│ │ └── transactions/ # API endpoints for transactions<br>
+│ ├── transactions/<br>
+│ │ └── page.tsx # Transactions listing UI<br>
+│ ├── layout.tsx # Root layout (fonts, themes)<br>
+│ ├── page.tsx # Main dashboard with charts<br>
+│ └── globals.css # Global styles using Tailwind<br>
+├── components/<br>
+│ └── ui/ # Shared UI components (from shadcn)<br>
+├── lib/<br>
+│ └── db.ts # MongoDB connection utility<br>
+├── models/<br>
+│ ├── Budget.ts # Budget Mongoose schema<br>
+│ └── Transaction.ts # Transaction Mongoose schema<br>
+├── public/ # Static assets like favicon<br>
+├── .env # Environment variables (e.g., DB URI)<br>
+├── .gitignore<br>
+├── package.json<br>
+└── README.md<br>
