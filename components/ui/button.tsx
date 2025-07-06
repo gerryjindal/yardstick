@@ -27,10 +27,20 @@ const buttonVariants = cva(
         lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
         icon: "size-9",
       },
+      state: {
+        active: "ring-2 ring-ring/60",
+        disabled: "opacity-50 pointer-events-none",
+        loading: "cursor-wait opacity-80",
+      },
+      fullWidth: {
+        true: "w-full",
+        false: "",
+      },
     },
     defaultVariants: {
       variant: "default",
       size: "default",
+      fullWidth: false,
     },
   }
 )
@@ -39,20 +49,59 @@ function Button({
   className,
   variant,
   size,
+  state,
   asChild = false,
+  icon,
+  loading = false,
+  fullWidth = false,
+  children,
   ...props
 }: React.ComponentProps<"button"> &
   VariantProps<typeof buttonVariants> & {
     asChild?: boolean
+    icon?: React.ReactNode
+    state?: "active" | "disabled" | "loading"
+    loading?: boolean
+    fullWidth?: boolean
   }) {
   const Comp = asChild ? Slot : "button"
 
   return (
     <Comp
       data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={cn(
+        buttonVariants({ variant, size, state: loading ? "loading" : state, fullWidth }),
+        className
+      )}
+      disabled={loading || state === "disabled"}
       {...props}
-    />
+    >
+      {loading ? (
+        <svg
+          className="animate-spin h-4 w-4 text-current"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            className="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            strokeWidth="4"
+          ></circle>
+          <path
+            className="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8z"
+          ></path>
+        </svg>
+      ) : icon ? (
+        <span className="inline-flex items-center justify-center">{icon}</span>
+      ) : null}
+      {children}
+    </Comp>
   )
 }
 
