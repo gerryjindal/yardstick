@@ -1,61 +1,64 @@
-# 💸 Expense Management System
+# 💸 Budgetary – Smart Expense & Budget Tracker
 
-An intuitive full-stack web app for tracking daily expenses, categorizing transactions, and managing personal budgets with insightful charts and real-time feedback.
-
----
-
-## 📌 Features
-
-- ✅ Add, view, and delete transactions
-- 📊 Visual charts for category breakdown (Pie) and budget vs actual comparison (Bar)
-- 💰 Set budgets for different categories
-- 🔔 Real-time toast notifications using `sonner`
-- 📈 View recent transactions and total expenses
-- ⚡ Built with modern UI using Tailwind CSS and shadcn/ui
+A modern full-stack web application for tracking personal expenses, managing category-wise budgets, and gaining insights through interactive visualizations.
 
 ---
 
-## 🧑‍💻 Tech Stack
+## 🚀 Features
 
-### Frontend:
-- [Next.js (App Router)](https://nextjs.org/)
-- [React](https://reactjs.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [shadcn/ui](https://ui.shadcn.com/)
+- ➕ Add, view, and delete financial transactions
+- 📊 Pie chart for category-wise expense breakdown
+- 📉 Bar chart comparing actual spending vs set budgets
+- 📝 Budget management by category (food, rent, shop, other)
+- 🔔 Instant feedback using `sonner` toast notifications
+- 📆 Recent transaction overview & total expense summary
+- 💅 Sleek and responsive UI using Tailwind CSS + shadcn/ui
 
-### Charts:
-- [Recharts](https://recharts.org/)
+---
 
-### Backend:
+## 🛠️ Tech Stack
+
+### 🔹 Frontend
+- **Next.js** (App Router)
+- **React**
+- **Tailwind CSS**
+- **shadcn/ui** – for accessible, unstyled component primitives
+
+### 📈 Charts
+- **Recharts** – composable chart components
+
+### 🔹 Backend
 - **Next.js API Routes**
 
-### Database:
-- [MongoDB](https://www.mongodb.com/) with [Mongoose](https://mongoosejs.com/)
+### 🗃️ Database
+- **MongoDB** (via **Mongoose** ODM)
 
-### Notifications:
-- [`sonner`](https://sonner.emilkowal.ski/) for toast messages
+### 🛎 Notifications
+- [`sonner`](https://sonner.emilkowal.ski/) for toast notifications
 
 ---
 
-## 🗂️ Project Structure
-    .
-    ├── app
-    │ ├── api
-    │ │ ├── budgets/ # Budget CRUD APIs
-    │ │ └── transactions/ # Transaction CRUD APIs
-    │ ├── page.tsx # Dashboard page
-    │ ├── transactions/page.tsx # All transactions page
-    │ ├── layout.tsx # App layout
-    │ └── globals.css # Tailwind styles
-    ├── components
-    │ └── ui/ # UI components (shadcn)
-    ├── lib
-    │ └── db.ts # DB connection setup
-    ├── models
-    │ ├── Budget.ts # Budget schema
-    │ └── Transaction.ts # Transaction schema
-    ├── public # Static assets
-    ├── .env # Environment config
-    ├── .gitignore
-    ├── package.json
-    └── README.md
+## 🗂️ Directory Structure
+
+.
+├── app/
+│ ├── api/
+│ │ ├── budgets/ # API endpoints for budgets
+│ │ └── transactions/ # API endpoints for transactions
+│ ├── transactions/
+│ │ └── page.tsx # Transactions listing UI
+│ ├── layout.tsx # Root layout (fonts, themes)
+│ ├── page.tsx # Main dashboard with charts
+│ └── globals.css # Global styles using Tailwind
+├── components/
+│ └── ui/ # Shared UI components (from shadcn)
+├── lib/
+│ └── db.ts # MongoDB connection utility
+├── models/
+│ ├── Budget.ts # Budget Mongoose schema
+│ └── Transaction.ts # Transaction Mongoose schema
+├── public/ # Static assets like favicon
+├── .env # Environment variables (e.g., DB URI)
+├── .gitignore
+├── package.json
+└── README.md
